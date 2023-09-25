@@ -24,7 +24,6 @@ body {
 }
 
 .solarSystem {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,6 +45,7 @@ body {
 .mercury::before,
 .venus::before,
 .earth::before,
+.moon::before,
 .mars::before,
 .jupiter::before,
 .saturn::before,
@@ -107,7 +107,140 @@ body {
   margin-bottom: 0.3em;
   height: 1.8em;
   width: 1.8em;
-  background-color: skyblue;
+  background: radial-gradient(
+        ellipse at 50% 50%,
+        rgb(69 255 144 / 0) 0%,
+        50%,
+        rgb(42 100 151 / 1) 50%,
+        52.94%,
+        rgb(13 42 66 / 1) 100%
+      )
+      0% 0% / 100% 100% no-repeat no-repeat,
+    /* Mask */
+      radial-gradient(
+        ellipse at 100% 100%,
+        rgb(0 0 0 / 0.41) 0%,
+        24.72%,
+        rgb(0 0 0 / 0) 65.2%
+      )
+      55.17% 54.48% / 71% 71% no-repeat no-repeat,
+    /* Shade */
+      radial-gradient(
+        ellipse at 100% 100%,
+        rgb(0 0 0 / 0.3) 0%,
+        50%,
+        rgb(0 0 0 / 0) 71.29%
+      )
+      67.94% 70.14% / 58.2% 57.8% no-repeat no-repeat,
+    /* Shade */
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgb(255 255 255 / 0.28) 0%,
+        14.69%,
+        rgb(255 255 255 / 0) 68.07%
+      )
+      28.65% 28.4% / 31.6% 32.4% no-repeat no-repeat,
+    /* Shine */
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgb(255 255 255 / 0) 0%,
+        65.56%,
+        rgb(255 255 255 / 0.49) 68.07%
+      )
+      51.59% 52.71% / 74.8% 74.2% no-repeat no-repeat,
+    /* Shine */
+      radial-gradient(
+        ellipse at 0% 100%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      17.93% 71.94% / 20.8% 28% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      85.39% 22.82% / 46.6% 17.6% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      62.92% 17.48% / 46.6% 17.6% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 100% 0%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      26.37% 60.14% / 23.4% 14.2% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 0% 0%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      65.01% 78.18% / 23.4% 34% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 100% 0%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      40.66% 78.18% / 15.4% 34% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 100% 100%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      26.37% 41.69% / 23.4% 17% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 0% 100%,
+        rgb(0 224 90 / 1) 0%,
+        50%,
+        rgb(69 168 255 / 0) 54.81%
+      )
+      64.12% 41.69% / 32% 17% no-repeat no-repeat,
+    /* Land */
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgb(69 117 255 / 1) 0%,
+        50%,
+        rgb(42 100 151 / 1) 100%
+      )
+      49.64% 49.26% / 72.2% 72.8% no-repeat no-repeat; /* Water */
+}
+
+.moon {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 5s linear infinite;
+
+  margin-left: -0.6em;
+  margin-top: 4.38em;
+}
+.moon::before {
+  margin-top: 2em;
+  margin-bottom: 0.3em;
+  height: 0.8em;
+  width: 0.8em;
+  background-color: silver;
 }
 
 .mars {
