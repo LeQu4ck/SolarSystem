@@ -16,23 +16,25 @@ body {
   overflow: hidden;
 }
 
-.container {
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.solarSystem {
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.solarSystem {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .sun {
   position: absolute;
-  height: 80px;
-  width: 80px;
+  height: 5em;
+  width: 5em;
   border: 1px solid #ccc;
   border-radius: 50%;
   background-color: yellow;
@@ -41,42 +43,181 @@ body {
   box-shadow: 0 0 20px 8px rgba(212, 95, 17, 1);
 }
 
+.mercury::before,
+.venus::before,
+.earth::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.uranus::before,
+.neptune::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
 .mercury {
   position: absolute;
-  height: 110px;
-  width: 110px;
-  border: 1px solid #ccc;
+  height: 7em;
+  width: 7em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
   border-radius: 50%;
-  top: -55px;
-  left: -55px;
-
-  animation: orbit-mercury 5s linear infinite;
+  animation: orbit 88s linear infinite;
+}
+.mercury::before {
+  margin-top: 0.45em;
+  margin-left: 0.3em;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: #c0c0c0;
 }
 
 .venus {
   position: absolute;
-  height: 223px;
-  width: 223px;
-  border: 1px solid #ccc;
+  height: 14em;
+  width: 14em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
   border-radius: 50%;
-  animation: orbit-venus 8s linear infinite;
+  animation: orbit 225s linear infinite;
+}
+.venus::before {
+  margin-top: 2.6em;
+  margin-bottom: 0.3em;
+  height: 1.6em;
+  width: 1.6em;
+  background-color: orange;
 }
 
-@keyframes orbit-mercury {
-  0% {
-    transform: translate(-200px, -200px) rotate(0deg);
-  }
-  100% {
-    transform: translate(-200px, -200px) rotate(360deg);
-  }
+.earth {
+  position: absolute;
+  height: 20em;
+  width: 20em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 365s linear infinite;
+}
+.earth::before {
+  margin-top: 5em;
+  margin-bottom: 0.3em;
+  height: 1.8em;
+  width: 1.8em;
+  background-color: skyblue;
 }
 
-@keyframes orbit-venus {
+.mars {
+  position: absolute;
+  height: 27em;
+  width: 27em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 687s linear infinite;
+}
+.mars::before {
+  margin-top: 8em;
+  margin-bottom: 0.3em;
+  height: 1.4em;
+  width: 1.4em;
+  background-color: red;
+}
+
+.jupiter {
+  position: absolute;
+  height: 40em;
+  width: 40em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 4332s linear infinite;
+}
+.jupiter::before {
+  margin-top: 10.5em;
+  margin-bottom: 0.3em;
+  height: 3.5em;
+  width: 3.5em;
+  background: rgb(84, 84, 69);
+  background: linear-gradient(
+    145deg,
+    rgba(84, 84, 69, 1) 2%,
+    rgba(186, 172, 146, 1) 19%,
+    rgba(235, 234, 244, 1) 32%,
+    rgba(158, 105, 84, 1) 49%,
+    rgba(235, 234, 244, 1) 68%,
+    rgba(186, 172, 146, 1) 86%,
+    rgba(84, 84, 69, 1) 100%
+  );
+}
+.saturn {
+  position: absolute;
+  height: 48em;
+  width: 48em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 10756s linear infinite;
+}
+.saturn::before {
+  margin-top: 14em;
+  margin-bottom: 0.3em;
+  height: 3em;
+  width: 3em;
+  background: rgb(92, 94, 93);
+  background: linear-gradient(
+    145deg,
+    rgba(92, 94, 93, 1) 0%,
+    rgba(186, 172, 146, 1) 45%,
+    rgba(84, 84, 69, 1) 100%
+  );
+}
+.uranus {
+  position: absolute;
+  height: 54em;
+  width: 54em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 30681s linear infinite;
+}
+.uranus::before {
+  margin-top: 18em;
+  margin-bottom: 0.3em;
+  height: 2.4em;
+  width: 2.4em;
+  background: #d4fbfb;
+}
+.neptune {
+  position: absolute;
+  height: 60em;
+  width: 60em;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-radius: 50%;
+  animation: orbit 60266s linear infinite;
+}
+.neptune::before {
+  margin-top: 19.3em;
+  margin-bottom: 0.3em;
+  height: 2.6em;
+  width: 2.6em;
+  background: #3d5dee;
+}
+@keyframes orbit {
   0% {
-    transform: translate(-350px, -350px) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translate(-350px, -350px) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
